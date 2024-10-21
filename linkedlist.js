@@ -193,20 +193,26 @@ ll.prepend(10);
 ll.prepend(20);
 ll.prepend(30);
 
-ll.prepend(40);
-
-ll.prepend(50);
+ll.append(0);
 
 ll.print();
+// ll.prepend(20);
+// ll.prepend(30);
 
-ll.removeFromEnd();
-ll.removeFromEnd();
-ll.removeFromEnd();
+// ll.prepend(40);
 
-ll.print();
-
-// ll.reverse();
+// ll.prepend(50);
 
 // ll.print();
 
-// ll.getSize();
+// ll.removeFromEnd();
+// ll.removeFromEnd();
+// ll.removeFromEnd();
+
+// ll.print();
+
+// // ll.reverse();
+
+// // ll.print();
+
+// // ll.getSize();
