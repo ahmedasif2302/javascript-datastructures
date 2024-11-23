@@ -7,8 +7,10 @@ class HashTable {
   hash(key) {
     let total = 0;
     for (let i = 0; i < key.length; i++) {
+      console.log(key.charCodeAt(i), "key.charCodeAt(i)");
       total += key.charCodeAt(i);
     }
+    console.log(total, "total");
     return total % this.size;
   }
 
@@ -56,12 +58,13 @@ class HashTable {
 const table = new HashTable(50);
 
 table.set("name", "asif");
+// table.set("name1", "asif1");
 
-table.set("age", 1);
-table.set("age", 11);
+// table.set("age", 1);
+// table.set("age", 11);
 
-table.set("aeg", 11);
-table.remove("aeg");
-table.remove("age");
+// table.set("aeg", 11);
+// table.remove("aeg");
+// table.remove("age");
 
 table.display();

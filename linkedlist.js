@@ -35,6 +35,7 @@ class LinkedList {
     }
   }
 
+  // insert in the begining of the list
   prepend(value) {
     const node = new Node(value);
     if (this.isEmpty()) {
@@ -112,6 +113,7 @@ class LinkedList {
     this.size--;
   }
 
+  // add item to the last of the list
   append(value) {
     if (this.isEmpty()) {
       const node = new Node(value);
