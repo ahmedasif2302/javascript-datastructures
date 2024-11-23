@@ -92,6 +92,22 @@ class BST {
       }
     }
   }
+
+  minValue(root) {
+    if (!root.left) {
+      console.log(root.value);
+    } else {
+      this.minValue(root.left);
+    }
+  }
+
+  maxValue(root) {
+    if (!root.right) {
+      console.log(root.value);
+    } else {
+      this.minValue(root.right);
+    }
+  }
 }
 
 const bst = new BST();
@@ -106,6 +122,8 @@ bst.preorder(bst.root);
 bst.inorder(bst.root);
 bst.postorder(bst.root);
 
+bst.minValue(bst.root);
+
 bst.bfs();
 
-// console.log(bst.searchNode(bst.root, 14));
+console.log(bst.searchNode(bst.root, 14));
