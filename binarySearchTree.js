@@ -125,6 +125,9 @@ class BST {
         return root.right;
       } else if (!root.right) {
         return root.left;
+      } else {
+        root.value = this.minValue(root.right);
+        root.right = this.deleteNode(root.right, root.value);
       }
     }
     return root;
@@ -153,4 +156,4 @@ bst.insert(8);
 
 bst.delete(8);
 
-// bst.bfs();
+bst.bfs();

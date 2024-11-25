@@ -56,6 +56,13 @@ class LinkedList {
     } else {
       const node = new Node(value);
       let prev = this.head;
+      /* 
+        1. index -1 will have previous element which has to removed  
+        2. removedNode will be pointing to prev.next the item which has to be removed
+        3. Pointing prev node to removed node next pointer
+        4. This prev wil get the previous node value
+     */
+
       for (let i = 0; i < index - 1; i++) {
         prev = prev.next;
       }
