@@ -83,30 +83,55 @@ class BST {
     queue.push(this.root);
     while (queue.length > 0) {
       let curr = queue.shift();
-      console.log(curr.value);
-      if (curr.left) {
-        queue.push(curr.left);
+      console.log(curr?.value);
+      if (curr?.left) {
+        queue.push(curr?.left);
       }
-      if (curr.right) {
-        queue.push(curr.right);
+      if (curr?.right) {
+        queue.push(curr?.right);
       }
     }
   }
 
   minValue(root) {
     if (!root.left) {
-      console.log(root.value);
+      return root.value;
     } else {
-      this.minValue(root.left);
+      return this.minValue(root.left);
     }
   }
 
   maxValue(root) {
     if (!root.right) {
-      console.log(root.value);
+      return root.value;
     } else {
-      this.minValue(root.right);
+      return this.minValue(root.right);
     }
+  }
+
+  deleteNode(root, value) {
+    if (root === null) {
+      return root;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!root.left && !root.right) {
+        return null;
+      }
+      if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+    }
+    return root;
+  }
+
+  delete(value) {
+    this.root = this.deleteNode(this.root, value);
   }
 }
 
@@ -117,13 +142,15 @@ bst.insert(5);
 bst.insert(15);
 bst.insert(3);
 bst.insert(7);
+bst.insert(6);
+bst.insert(8);
 
-bst.preorder(bst.root);
-bst.inorder(bst.root);
-bst.postorder(bst.root);
+// bst.preorder(bst.root);
+// bst.inorder(bst.root);
+// bst.postorder(bst.root);
 
-bst.minValue(bst.root);
+// bst.minValue(bst.root);
 
-bst.bfs();
+bst.delete(8);
 
-console.log(bst.searchNode(bst.root, 14));
+// bst.bfs();
